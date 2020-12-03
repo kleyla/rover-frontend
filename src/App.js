@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ThemeProvider, makeStyles } from "@material-ui/core";
+import {
+  BrowserRouter as Router,
+  Switch,
+  HashRouter,
+} from "react-router-dom";
+import theme from "./themeConfig";
+import Routes from "./Routes";
+import Navbar from "./components/shared/Navbar";
+import Footer from "./components/shared/Footer";
+
+const useStyles = makeStyles({
+  root: {
+    display: "flex",
+  },
+  toolbar: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.default,
+    padding: theme.spacing(3),
+  },
+});
 
 function App() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <HashRouter basename="/">
+        <div className={classes.root}>
+          <Navbar />
+          <div className={classes.content}>
+            <div className={classes.toolbar}></div>
+            <Switch>
+              <Routes />
+            </Switch>
+          </div>
+          <Footer />
+        </div>
+      </HashRouter>
+    </ThemeProvider>
   );
 }
 
