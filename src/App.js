@@ -1,10 +1,6 @@
 import React from "react";
-import { ThemeProvider, makeStyles } from "@material-ui/core";
-import {
-  BrowserRouter as Router,
-  Switch,
-  HashRouter,
-} from "react-router-dom";
+import { ThemeProvider, makeStyles, Container } from "@material-ui/core";
+import { BrowserRouter as Router, Switch, HashRouter } from "react-router-dom";
 import theme from "./themeConfig";
 import Routes from "./Routes";
 import Navbar from "./components/shared/Navbar";
@@ -32,9 +28,11 @@ function App() {
           <Navbar />
           <div className={classes.content}>
             <div className={classes.toolbar}></div>
-            <Switch>
-              <Routes />
-            </Switch>
+            <Container maxWidth="lg">
+              <Switch>
+                <Routes />
+              </Switch>
+            </Container>
           </div>
           <Footer />
         </div>
