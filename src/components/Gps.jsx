@@ -37,6 +37,8 @@ const Gps = () => {
   const classes = useStyles();
   const { latitude, longitude, positionInitial, loading } = useGetGps();
   const coords = [-17.7834936, -63.1820853];
+  console.log(latitude);
+  console.log(positionInitial);
 
   return (
     <>
@@ -50,7 +52,7 @@ const Gps = () => {
             <Box mb={2}>
               <Typography variant="h6">Rover's Ubication</Typography>
             </Box>
-            <MapContainer center={coords} zoom={16} className={classes.map}>
+            <MapContainer center={coords} zoom={13} className={classes.map}>
               <TileLayer
                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

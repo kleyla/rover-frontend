@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
 const Footer = () => {
   const classes = useStyles();
   const year = new Date().getFullYear();
-  console.log(socialList);
 
   return (
     <footer className={classes.footer}>
