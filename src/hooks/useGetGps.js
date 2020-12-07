@@ -10,6 +10,7 @@ const useGetGps = () => {
     longitude: 0,
     positionInitial: [0, 0],
     loading: true,
+    loadingAfterCharge: false,
   });
   const isMounted = useRef(true);
 
@@ -18,12 +19,17 @@ const useGetGps = () => {
       $(() => {
         $.getJSON("/assets/data.gps.json", (data) => {
           if (isMounted.current) {
-            setState((state) => ({
-              ...state,
-              latitude: -17.516412,
-              longitude: -63.167541,
-              loading: false,
-            }));
+            if (data.status === 65) {
+              setState((state) => ({
+                ...state,
+                latitude: data.latitude,
+                longitude: data.longitude,
+                loading: false,
+                loadingAfterCharge: false,
+              }));
+            } else {
+              setState((state) => ({ ...state, loadingAfterCharge: true }));
+            }
           }
         });
       });
