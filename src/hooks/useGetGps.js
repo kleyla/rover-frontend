@@ -9,6 +9,7 @@ const useGetGps = () => {
     Latitude: 0,
     Longitude: 0,
     positionInitial: [0, 0],
+    NroSats: 0,
     loading: true,
     loadingAfterCharge: false,
   });
@@ -24,6 +25,7 @@ const useGetGps = () => {
                 ...state,
                 Latitude: data.Latitude,
                 Longitude: data.Longitude,
+                NroSats: data.NroSats,
                 loading: false,
                 loadingAfterCharge: false,
               }));
