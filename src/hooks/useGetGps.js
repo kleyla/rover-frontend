@@ -6,8 +6,8 @@ const useGetGps = () => {
     hour: 0,
     minute: 0,
     second: 0,
-    latitude: 0,
-    longitude: 0,
+    Latitude: 0,
+    Longitude: 0,
     positionInitial: [0, 0],
     loading: true,
     loadingAfterCharge: false,
@@ -19,11 +19,11 @@ const useGetGps = () => {
       $(() => {
         $.getJSON("/assets/data.gps.json", (data) => {
           if (isMounted.current) {
-            if (data.status === 65) {
+            if (data.Status === 65) {
               setState((state) => ({
                 ...state,
-                latitude: data.latitude,
-                longitude: data.longitude,
+                Latitude: data.Latitude,
+                Longitude: data.Longitude,
                 loading: false,
                 loadingAfterCharge: false,
               }));
@@ -44,7 +44,7 @@ const useGetGps = () => {
     if (!state.loading) {
       setState((state) => ({
         ...state,
-        positionInitial: [state.latitude, state.longitude],
+        positionInitial: [state.Latitude, state.Longitude],
       }));
     }
   }, [state.loading]);

@@ -26,8 +26,8 @@ const useStyles = makeStyles((theme) => ({
 const Gps = () => {
   const classes = useStyles();
   const {
-    latitude,
-    longitude,
+    Latitude,
+    Longitude,
     positionInitial,
     loading,
     loadingAfterCharge,
@@ -50,7 +50,7 @@ const Gps = () => {
                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={[latitude, longitude]}>
+              <Marker position={[Latitude, Longitude]}>
                 <Popup>Rover's Ubication</Popup>
               </Marker>
             </Map>
