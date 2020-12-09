@@ -4,6 +4,7 @@ import { Box, CircularProgress, Grid, Typography } from "@material-ui/core";
 import { useStyles } from "./../hooks/useStyles";
 import RoverMap from "./shared/RoverMap";
 import SatelliteCard from "./shared/SatelliteCard";
+import SpeedCard from "./shared/SpeedCard";
 
 const Gps = () => {
   const classes = useStyles();
@@ -12,6 +13,7 @@ const Gps = () => {
     Longitude,
     positionInitial,
     NroSats,
+    Speed,
     loading,
     loadingAfterCharge,
   } = useGetGps();
@@ -23,17 +25,24 @@ const Gps = () => {
           <CircularProgress color="secondary" />
         </div>
       ) : (
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={4}>
-            <RoverMap
-              positionInitial={positionInitial}
-              Latitude={Latitude}
-              Longitude={Longitude}
-              loadingAfterCharge={loadingAfterCharge}
-            />
+        <Grid container alignItems="flex-start" spacing={2}>
+          <Grid container item xs={12} md={4}>
+            <Grid item xs={12}>
+              <RoverMap
+                positionInitial={positionInitial}
+                Latitude={Latitude}
+                Longitude={Longitude}
+                loadingAfterCharge={loadingAfterCharge}
+              />
+            </Grid>
           </Grid>
-          <Grid item xs={12} md={4}>
-            <SatelliteCard NroSats={NroSats} />
+          <Grid container item xs={12} md={4} spacing={2}>
+            <Grid item xs={12}>
+              <SatelliteCard NroSats={NroSats} />
+            </Grid>
+            <Grid item xs={12}>
+              <SpeedCard Speed={Speed} />
+            </Grid>
           </Grid>
         </Grid>
       )}

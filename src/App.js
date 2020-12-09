@@ -9,6 +9,7 @@ import Footer from "./components/shared/Footer";
 const useStyles = makeStyles({
   root: {
     display: "flex",
+    flexDirection: "column",
     backgroundColor: theme.palette.background.default,
   },
   toolbar: theme.mixins.toolbar,

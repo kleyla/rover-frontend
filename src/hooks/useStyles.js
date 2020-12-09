@@ -9,7 +9,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   map: {
     align: "center",
-    height: "300px",
+    height: "500px",
     width: "100%",
   },
   card: {
@@ -31,5 +31,11 @@ export const useStyles = makeStyles((theme) => ({
   cardContentRow: {
     display: "flex",
     flexDirection: "row",
+  },
+  cardContentColumnCenter: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   },
 }));

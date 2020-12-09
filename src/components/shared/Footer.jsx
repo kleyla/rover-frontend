@@ -14,8 +14,8 @@ import { socialList } from "./../../data/socialList";
 const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: "#343a40",
-    position: "fixed",
-    bottom: "0px",
+    // position: "fixed",
+    // bottom: "0px",
     width: "100%",
     color: theme.palette.common.white,
   },
@@ -27,7 +27,7 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <Box my={2}>
-        <Grid container spacing={1}>
+        <Grid container>
           {socialList.map((item, index) => {
             return (
               <Grid item xs={12} md={6} key={index}>
@@ -52,6 +52,10 @@ const Footer = () => {
               </Grid>
             );
           })}
+        </Grid>
+      </Box>
+      <Box my={3}>
+        <Grid container>
           <Grid item xs={12}>
             <Grid container justify="center">
               <Typography align="center">
