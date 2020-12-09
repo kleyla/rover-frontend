@@ -26,7 +26,7 @@ const Gps = () => {
         </div>
       ) : (
         <Grid container alignItems="flex-start" spacing={2}>
-          <Grid container item xs={12} md={4}>
+          <Grid container item xs={12} md={6} lg={4}>
             <Grid item xs={12}>
               <RoverMap
                 positionInitial={positionInitial}
@@ -36,11 +36,11 @@ const Gps = () => {
               />
             </Grid>
           </Grid>
-          <Grid container item xs={12} md={4} spacing={2}>
-            <Grid item xs={12}>
+          <Grid container item xs={12} md={6} lg={4} spacing={2}>
+            <Grid item xs={12} sm={6} md={12}>
               <SatelliteCard NroSats={NroSats} />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={6} md={12}>
               <SpeedCard Speed={Speed} />
             </Grid>
           </Grid>
