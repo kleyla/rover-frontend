@@ -9,8 +9,12 @@ export const useStyles = makeStyles((theme) => ({
   },
   map: {
     align: "center",
-    height: "500px",
+    height: "300px",
     width: "100%",
+    "@media (min-width: 1280px)": {
+      marginTop: theme.spacing(5),
+      backgroundColor: "red",
+    },
   },
   card: {
     backgroundColor: theme.palette.background.paper,
@@ -37,5 +41,12 @@ export const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+  },
+  footer: {
+    backgroundColor: "#343a40",
+    position: "fixed",
+    bottom: "0px",
+    width: "100%",
+    color: theme.palette.common.white,
   },
 }));
