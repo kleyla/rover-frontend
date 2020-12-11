@@ -9,11 +9,14 @@ import Footer from "./components/shared/Footer";
 const useStyles = makeStyles({
   root: {
     display: "flex",
+    flexDirection: "column",
+    backgroundColor: theme.palette.background.default,
   },
   toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
+    minHeight: "100vh",
+    height: "100%",
     padding: theme.spacing(3),
   },
 });
@@ -28,11 +31,11 @@ function App() {
           <Navbar />
           <div className={classes.content}>
             <div className={classes.toolbar}></div>
-            <Container maxWidth="lg">
-              <Switch>
-                <Routes />
-              </Switch>
-            </Container>
+            {/* <Container maxWidth="lg"> */}
+            <Switch>
+              <Routes />
+            </Switch>
+            {/* </Container> */}
           </div>
           <Footer />
         </div>

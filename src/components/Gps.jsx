@@ -1,27 +1,10 @@
 import React from "react";
 import useGetGps from "../hooks/useGetGps";
-import {
-  Box,
-  CircularProgress,
-  Grid,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
-import { Map, Marker, Popup, TileLayer } from "react-leaflet";
-
-const useStyles = makeStyles((theme) => ({
-  spinner: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "center",
-    marginTop: "16px",
-  },
-  map: {
-    align: "center",
-    height: "400px",
-    width: "100%",
-  },
-}));
+import { Box, CircularProgress, Grid, Typography } from "@material-ui/core";
+import { useStyles } from "./../hooks/useStyles";
+import RoverMap from "./shared/RoverMap";
+import SatelliteCard from "./shared/SatelliteCard";
+import SpeedCard from "./shared/SpeedCard";
 
 const Gps = () => {
   const classes = useStyles();
@@ -29,6 +12,8 @@ const Gps = () => {
     Latitude,
     Longitude,
     positionInitial,
+    NroSats,
+    Speed,
     loading,
     loadingAfterCharge,
   } = useGetGps();
@@ -40,25 +25,24 @@ const Gps = () => {
           <CircularProgress color="secondary" />
         </div>
       ) : (
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Box mb={2}>
-              <Typography variant="h6">Rover's Ubication</Typography>
-            </Box>
-            <Map center={positionInitial} zoom={13} className={classes.map}>
-              <TileLayer
-                attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        <Grid container alignItems="flex-start" spacing={2}>
+          <Grid container item xs={12} md={6} lg={4}>
+            <Grid item xs={12}>
+              <RoverMap
+                positionInitial={positionInitial}
+                Latitude={Latitude}
+                Longitude={Longitude}
+                loadingAfterCharge={loadingAfterCharge}
               />
-              <Marker position={[Latitude, Longitude]}>
-                <Popup>Rover's Ubication</Popup>
-              </Marker>
-            </Map>
-            {loadingAfterCharge && (
-              <div className={classes.spinner}>
-                <CircularProgress color="primary" />
-              </div>
-            )}
+            </Grid>
+          </Grid>
+          <Grid container item xs={12} md={6} lg={4} spacing={2}>
+            <Grid item xs={12} sm={6} md={12}>
+              <SatelliteCard NroSats={NroSats} />
+            </Grid>
+            <Grid item xs={12} sm={6} md={12}>
+              <SpeedCard Speed={Speed} />
+            </Grid>
           </Grid>
         </Grid>
       )}
