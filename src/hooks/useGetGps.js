@@ -3,9 +3,9 @@ import $ from "jquery/dist/jquery.min.js";
 
 const useGetGps = () => {
   const [state, setState] = useState({
-    hour: 0,
-    minute: 0,
-    second: 0,
+    Hour: 0,
+    Min: 0,
+    Sec: 0,
     Latitude: 0,
     Longitude: 0,
     positionInitial: [0, 0],
@@ -24,6 +24,9 @@ const useGetGps = () => {
             if (data.Status === 65) {
               setState((state) => ({
                 ...state,
+                Hour: data.Hour,
+                Min: data.Min,
+                Sec: data.Sec,
                 Latitude: data.Latitude,
                 Longitude: data.Longitude,
                 NroSats: data.NroSats,

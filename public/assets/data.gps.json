@@ -1,8 +1,11 @@
 {
-  "Latitude": -17.516412,
-  "Longitude": -63.167541,
-  "Status": 65,
-  "NroSats": 2,
-  "Speed": 160.5,
-  "Height": 23.5
+    "Hour": 12,
+    "Min": 50,
+    "Sec": 50,
+    "Latitude": -17.516412,
+    "Longitude": -63.167541,
+    "Status": 65,
+    "NroSats": 2,
+    "Speed": 160.5,
+    "Height": 23.5
 }
