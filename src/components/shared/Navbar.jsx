@@ -15,6 +15,7 @@ import {
   ListItemText,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import useGetGps from "../../hooks/useGetGps";
 
 const useStyles = makeStyles((theme) => ({
   offset: theme.mixins.toolbar,
@@ -43,6 +44,13 @@ const StyledBadge = withStyles((theme) => ({
 const Navbar = (props) => {
   const classes = useStyles();
 
+  const {
+    Hour,
+    Min,
+    Sec,
+    loading,
+  } = useGetGps();
+
   return (
     <AppBar className={classes.appBar}>
       <Toolbar>
@@ -58,6 +66,9 @@ const Navbar = (props) => {
             <ListItemText primary="ROVER"></ListItemText>
           </ListItem>
         </Link>
+        <Typography>{ Hour }:</Typography>
+        <Typography>{ Min }:</Typography>
+        <Typography>{ Sec }</Typography>
         <IconButton aria-label="button">
           <StyledBadge badgeContent={4} color="error">
             <Icon color="inherit">notifications</Icon>
