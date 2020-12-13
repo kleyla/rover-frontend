@@ -11,10 +11,6 @@ export const useStyles = makeStyles((theme) => ({
     align: "center",
     height: "300px",
     width: "100%",
-    "@media (min-width: 1280px)": {
-      marginTop: theme.spacing(5),
-      backgroundColor: "red",
-    },
   },
   card: {
     backgroundColor: theme.palette.background.paper,

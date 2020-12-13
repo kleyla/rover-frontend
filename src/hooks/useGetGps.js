@@ -11,6 +11,7 @@ const useGetGps = () => {
     positionInitial: [0, 0],
     NroSats: 0,
     Speed: 0,
+    Height: 0,
     loading: true,
     loadingAfterCharge: false,
   });
@@ -31,6 +32,7 @@ const useGetGps = () => {
                 Longitude: data.Longitude,
                 NroSats: data.NroSats,
                 Speed: data.Speed,
+                Height: data.Height,
                 loading: false,
                 loadingAfterCharge: false,
               }));
