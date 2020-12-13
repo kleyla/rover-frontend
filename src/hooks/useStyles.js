@@ -60,4 +60,7 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
     color: theme.palette.common.white,
   },
+  textGrey: {
+    color: "#AAA",
+  },
 }));

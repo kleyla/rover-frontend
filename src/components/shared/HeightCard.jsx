@@ -11,23 +11,32 @@ const HeightCard = (props) => {
       <CardContent className={classes.cardContentRow}>
         <LinearGauge
           width={150}
-          height={400}
+          height={600}
           units="metros"
-          minValue={0}
-          maxValue={220}
+          minValue={100}
+          maxValue={4000}
           majorTicks={[
-            "0",
-            "20",
-            "40",
-            "60",
-            "80",
             "100",
-            "120",
-            "140",
-            "160",
-            "180",
             "200",
-            "220",
+            "400",
+            "600",
+            "800",
+            "1000",
+            "1200",
+            "1400",
+            "1600",
+            "1800",
+            "2000",
+            "2200",
+            "2400",
+            "2600",
+            "2800",
+            "3000",
+            "3200",
+            "3400",
+            "3600",
+            "3800",
+            "4000",
           ]}
           minorTicks={2}
           strokeTicks="true"
@@ -47,7 +56,7 @@ const HeightCard = (props) => {
         ></LinearGauge>
         <Box mx={6}>
           <Typography variant="h6">Height</Typography>
-          <Typography variant="h3">{props.Height}</Typography>
+          <Typography variant="h4" className={classes.textGrey}>{props.Height} m</Typography>
         </Box>
       </CardContent>
     </Card>

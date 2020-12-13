@@ -18,7 +18,7 @@ const RoverMap = (props) => {
         <Box mb={2}>
           <Typography variant="h6">Rover's Ubication</Typography>
           <Typography>Lat/Long</Typography>
-          <Typography>
+          <Typography className={classes.textGrey}>
             {props.Latitude}/{props.Longitude}
           </Typography>
         </Box>
