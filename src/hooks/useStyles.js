@@ -1,6 +1,21 @@
 import { makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) => ({
+  // Navbar
+  titleAppBar: {
+    textDecoration: "none",
+    color: theme.palette.common.white,
+  },
+  appBar: {
+    // backgroundColor: theme.palette.primary.dark,
+  },
+  textWhite: {
+    color: theme.palette.common.white,
+    textDecoration: "none",
+  },
+  space: {
+    flexGrow: 1,
+  },
   spinner: {
     width: "100%",
     display: "flex",
