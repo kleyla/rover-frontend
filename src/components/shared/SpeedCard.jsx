@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, CardContent, Typography } from "@material-ui/core";
+import { Card, CardContent, Typography } from "@material-ui/core";
 import ReactSpeedometer from "react-d3-speedometer";
 import { useStyles } from "./../../hooks/useStyles";
 
@@ -10,13 +10,13 @@ const SpeedCard = (props) => {
     <Card className={classes.card}>
       <CardContent className={classes.cardContentColumnCenter}>
         <ReactSpeedometer
-          maxValue={500}
+          maxValue={50}
           value={props.Speed}
+          currentValueText={`${props.Speed} Km/hr`}
           segments={10}
           needleColor="red"
           startColor="#39ff14"
           endColor="#f80000"
-          textColor="grey"
           textColor="#AAA"
           width={340}
           height={200}

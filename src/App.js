@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeProvider, makeStyles, Container } from "@material-ui/core";
+import { ThemeProvider, makeStyles } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, HashRouter } from "react-router-dom";
 import theme from "./themeConfig";
 import Routes from "./Routes";

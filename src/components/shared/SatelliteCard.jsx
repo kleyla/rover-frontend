@@ -21,7 +21,9 @@ const SatelliteCard = (props) => {
         />
         <Box mx={6}>
           <Typography variant="h6">Number of Satellites</Typography>
-          <Typography variant="h3">{props.NroSats}</Typography>
+          <Typography variant="h4" className={classes.textGrey}>
+            {props.NroSats}
+          </Typography>
         </Box>
       </CardContent>
     </Card>
