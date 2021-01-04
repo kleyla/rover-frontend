@@ -24,7 +24,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   map: {
     align: "center",
-    height: "300px",
+    height: "450px",
     width: "100%",
   },
   card: {
