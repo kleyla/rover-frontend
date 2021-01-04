@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeProvider, makeStyles } from "@material-ui/core";
+import { ThemeProvider, makeStyles, Container } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, HashRouter } from "react-router-dom";
 import theme from "./themeConfig";
 import Routes from "./Routes";
@@ -31,11 +31,11 @@ function App() {
           <Navbar />
           <div className={classes.content}>
             <div className={classes.toolbar}></div>
-            {/* <Container maxWidth="lg"> */}
-            <Switch>
-              <Routes />
-            </Switch>
-            {/* </Container> */}
+            <Container maxWidth="lg">
+              <Switch>
+                <Routes />
+              </Switch>
+            </Container>
           </div>
           <Footer />
         </div>

@@ -32,7 +32,8 @@ export const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.white,
   },
   cardMaxWidth: {
-    maxWidth: 345,
+    // maxWidth: 345,
+    maxWidth: "100%",
   },
   cardMedia: {
     width: "100px",
@@ -62,5 +63,8 @@ export const useStyles = makeStyles((theme) => ({
   },
   textGrey: {
     color: "#AAA",
+  },
+  iconWhite: {
+    backgroundColor: "#fff",
   },
 }));
