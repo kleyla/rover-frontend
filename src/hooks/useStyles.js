@@ -15,6 +15,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   space: {
     flexGrow: 1,
+    textAlign: "center",
   },
   spinner: {
     width: "100%",
@@ -66,5 +67,9 @@ export const useStyles = makeStyles((theme) => ({
   },
   iconWhite: {
     backgroundColor: "#fff",
+  },
+  iconSatellite: {
+    height: "50px",
+    paddingLeft: "8px",
   },
 }));
