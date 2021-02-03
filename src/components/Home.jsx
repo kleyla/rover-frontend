@@ -2,11 +2,9 @@ import { Grid } from "@material-ui/core";
 import React from "react";
 import LitleCard from "./shared/LitleCard";
 import { useHistory } from "react-router-dom";
-import { useStyles } from "./../hooks/useStyles";
 
 const Home = () => {
   const history = useHistory();
-  const classes = useStyles();
 
   const openGps = () => history.push("/data/gps");
   const openVelocimeter = () => history.push("/data/velocimeter");

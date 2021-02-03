@@ -2,8 +2,6 @@ import React from "react";
 import useGetGps from "../hooks/useGetGps";
 import {
   Box,
-  Card,
-  CardContent,
   CircularProgress,
   Grid,
   Typography,

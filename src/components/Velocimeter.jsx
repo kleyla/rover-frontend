@@ -6,11 +6,7 @@ import SpeedCard from "./shared/SpeedCard";
 
 const Gps = () => {
   const classes = useStyles();
-  const {
-    Speed,
-    loading,
-    loadingAfterCharge,
-  } = useGetGps();
+  const { Speed, loading } = useGetGps();
 
   return (
     <>

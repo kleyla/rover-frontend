@@ -2,7 +2,6 @@ import React from "react";
 import {
   AppBar,
   Button,
-  makeStyles,
   Toolbar,
   Typography,
   Avatar,
@@ -18,7 +17,7 @@ import { useStyles } from "./../../hooks/useStyles";
 const Navbar = (props) => {
   const classes = useStyles();
 
-  const { Hour, Min, Sec, NroSats, loading } = useGetGps();
+  const { Hour, Min, Sec, NroSats } = useGetGps();
 
   return (
     <AppBar className={classes.appBar}>
