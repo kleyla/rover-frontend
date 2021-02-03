@@ -15,6 +15,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   space: {
     flexGrow: 1,
+    textAlign: "center",
   },
   spinner: {
     width: "100%",
@@ -24,7 +25,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   map: {
     align: "center",
-    height: "300px",
+    height: "450px",
     width: "100%",
   },
   card: {
@@ -32,7 +33,8 @@ export const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.white,
   },
   cardMaxWidth: {
-    maxWidth: 345,
+    // maxWidth: 345,
+    maxWidth: "100%",
   },
   cardMedia: {
     width: "100px",
@@ -62,5 +64,12 @@ export const useStyles = makeStyles((theme) => ({
   },
   textGrey: {
     color: "#AAA",
+  },
+  iconWhite: {
+    backgroundColor: "#fff",
+  },
+  iconSatellite: {
+    height: "50px",
+    paddingLeft: "8px",
   },
 }));
