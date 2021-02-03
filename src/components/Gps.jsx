@@ -17,9 +17,6 @@ const Gps = () => {
     Latitude,
     Longitude,
     positionInitial,
-    NroSats,
-    Speed,
-    Height,
     loading,
     loadingAfterCharge,
   } = useGetGps();
@@ -33,35 +30,31 @@ const Gps = () => {
       ) : (
         <Grid container alignItems="flex-start" spacing={2}>
           <Grid item xs={12}>
-            <Card className={classes.card}>
-              <CardContent>
-                <Box mb={2}>
-                  <Typography variant="h6" align="center">
-                    Rover's Ubication
-                  </Typography>
-                  <Typography className={classes.textGrey}>
-                    Latitud: {Latitude}
-                  </Typography>
-                  <Typography className={classes.textGrey}>
-                    Longitud: {Longitude}
-                  </Typography>
-                </Box>
-                <Map center={positionInitial} zoom={14} className={classes.map}>
-                  <TileLayer
-                    attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  />
-                  <Marker position={[Latitude, Longitude]}>
-                    <Popup>Rover's Ubication</Popup>
-                  </Marker>
-                </Map>
-                {loadingAfterCharge && (
-                  <div className={classes.spinner}>
-                    <CircularProgress color="primary" />
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+            <Box mb={2}>
+              <Typography variant="h6" align="center" className={classes.textWhite}>
+                Rover's Ubication
+              </Typography>
+              <Typography className={classes.textGrey}>
+                Latitud: {Latitude}
+              </Typography>
+              <Typography className={classes.textGrey}>
+                Longitud: {Longitude}
+              </Typography>
+            </Box>
+            <Map center={positionInitial} zoom={14} className={classes.map}>
+              <TileLayer
+                attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={[Latitude, Longitude]}>
+                <Popup>Rover's Ubication</Popup>
+              </Marker>
+            </Map>
+            {loadingAfterCharge && (
+              <div className={classes.spinner}>
+                <CircularProgress color="primary" />
+              </div>
+            )}
           </Grid>
         </Grid>
       )}

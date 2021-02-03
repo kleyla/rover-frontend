@@ -31,11 +31,11 @@ function App() {
           <Navbar />
           <div className={classes.content}>
             <div className={classes.toolbar}></div>
-            <Container maxWidth="lg">
+            {/* <Container maxWidth="lg"> */}
               <Switch>
                 <Routes />
               </Switch>
-            </Container>
+            {/* </Container> */}
           </div>
           <Footer />
         </div>
